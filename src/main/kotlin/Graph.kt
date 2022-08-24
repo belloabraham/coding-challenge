@@ -1,0 +1,1 @@
+class GraphClass(friends:Array<BinaryNode>)
