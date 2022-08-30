@@ -1,1 +1,5 @@
-class GraphClass(friends:Array<BinaryNode>)
+class GraphNode(value:String, left:GraphNode?, right:GraphNode?)
+
+fun createGraph(){
+
+}

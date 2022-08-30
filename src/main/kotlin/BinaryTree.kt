@@ -5,6 +5,10 @@ class BinaryNode(val value:String, var leftRef:BinaryNode?=null, var rightRef:Bi
 class BinaryNodeNumber(val value:Int, var leftRef:BinaryNodeNumber?=null, var rightRef:BinaryNodeNumber?=null)
 
 
+//Max path sum
+//min path sum
+//Max value
+
 fun createNumbTree(): BinaryNodeNumber {
     val one = BinaryNodeNumber(1)
     val two = BinaryNodeNumber(2)
@@ -49,6 +53,7 @@ fun createStringTree(): BinaryNode {
     * */
 }
 
+//T= O(n) S= O(n)
 fun depthFirstReversal(rootLeftOrRightRefNode:BinaryNode?): List<String> {
     //Break condition
     if(rootLeftOrRightRefNode==null)
@@ -60,6 +65,7 @@ fun depthFirstReversal(rootLeftOrRightRefNode:BinaryNode?): List<String> {
     return listOf(rootLeftOrRightRefNode.value).plus(leftList).plus(rightList)
 }
 
+//T= O(n)
 fun breathFirstReversal(rootNode: BinaryNode){
     val queue:Queue<BinaryNode> = LinkedList()
     queue.add(rootNode)
@@ -77,10 +83,10 @@ fun bfRecursion(queue:Queue<BinaryNode>){
     if(firstItem.rightRef !=null)
         queue.add(firstItem.rightRef)
 
-
     bfRecursion(queue)
 }
 
+//T= O(n)
 fun treeIncludes(node:BinaryNode?, target:String): Boolean {
     if(node == null)
         return false
@@ -90,6 +96,8 @@ fun treeIncludes(node:BinaryNode?, target:String): Boolean {
 
     return  node.value == target || leftResult || rightResult
 }
+
+//T = O(n)
 fun treeSum(binaryNodeNumber: BinaryNodeNumber?): Int {
     if(binaryNodeNumber==null)
         return 0
@@ -100,21 +108,41 @@ fun treeSum(binaryNodeNumber: BinaryNodeNumber?): Int {
     return  binaryNodeNumber.value.plus(leftValue).plus(rightValue)
 }
 
-fun treeMin(binaryNodeNumber: BinaryNodeNumber?): Int? {
+//T= O(n)
+fun treeMinValue(binaryNodeNumber: BinaryNodeNumber?): Int? {
     if(binaryNodeNumber==null)
         return null
 
-    val leftValue = if (treeMin(binaryNodeNumber.leftRef) == null) binaryNodeNumber.value else treeMin(binaryNodeNumber.leftRef)
-    val rightValue = if(treeMin(binaryNodeNumber.rightRef) == null) binaryNodeNumber.value else treeMin(binaryNodeNumber.rightRef)
+    val leftValue = if (treeMinValue(binaryNodeNumber.leftRef) == null) binaryNodeNumber.value else treeMinValue(binaryNodeNumber.leftRef)
+    val rightValue = if(treeMinValue(binaryNodeNumber.rightRef) == null) binaryNodeNumber.value else treeMinValue(binaryNodeNumber.rightRef)
 
     return  Math.min(binaryNodeNumber.value, Math.min(leftValue!!, rightValue!!))
 }
+
+//T = O(n)
+fun maxPath(node: BinaryNodeNumber?, max:Int): Boolean {
+
+    if(node == null){
+        return false
+    }else if(node.leftRef == null && node.rightRef == null && (max - node.value) == 0){
+        //Checking if I got the answer at the leaf
+        return true
+    }else{
+        val leftRef = maxPath(node.leftRef, max - node.value)
+        val rightRef = maxPath(node.rightRef, max - node.value)
+
+       return  leftRef || rightRef
+    }
+
+}
+
 
 
 
 /*fun treeSum2(binaryNodeNumber: BinaryNodeNumber): Int {
     val queue:Queue<BinaryNodeNumber> = LinkedList()
     queue.add(binaryNodeNumber)
+
 
     var count = 0
 

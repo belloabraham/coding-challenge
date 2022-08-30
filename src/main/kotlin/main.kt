@@ -1,18 +1,18 @@
-
+import java.util.*
 
 fun main(args: Array<String>) {
-   // createBinaryTree()
-  // val arrayList = MyArrayList(10)
-   // arrayList.print()
-   // val rootNode = getStringTree()
-    val rootNode = createNumbTree()
-    //depthFirstReversal(rootNode)
-    //breathFirstReversal(rootNode)
-  // print(treeIncludes(rootNode, "E"))
-     //print(treeSum(rootNode))
-    val ff = treeSum(rootNode)
-    println(treeMin(rootNode))
+   val nodeTree = createANodeTree2()
+
+    val result =  pathSum(nodeTree, 22)
+
+   result.forEach {
+
+      it.forEach {
+      //    println(it)
+      }
+       println()
+   }
+
+ //   println(result.sum())
+
 }
-
-
-
