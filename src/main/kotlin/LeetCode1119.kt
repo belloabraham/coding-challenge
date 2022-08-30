@@ -15,8 +15,10 @@ fun removeVowels(value:String): String {
     return stringWithoutVowel
 }
 
-fun isVowel(char: Char): Boolean {
+fun isVowel(value: Char): Boolean {
+    val char = value.toLowerCase()
     if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u')
         return true
     return false
 }
+
