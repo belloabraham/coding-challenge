@@ -5,8 +5,7 @@ fun removeElement(array: Array<Int>, replaceValue:Int): Int {
 
     for (item in array){
         if(item != replaceValue)
-            array[index] = item
-        ++index
+            array[index++] = item
     }
 
     return index
