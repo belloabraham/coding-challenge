@@ -1,12 +1,7 @@
 import java.util.*
 
 fun main(args: Array<String>) {
-    val first = listOf(1,2,4)
-    val second = listOf(1,3)
-
-    val result = mergeTwoList(first, second)
-     result.forEach {
-         println(it)
-     }
+   val result = mostCommonWord("Bob hit a ball, the hit ball flew far after it was hit.", arrayOf("hit"))
+    println(result)
 
 }
