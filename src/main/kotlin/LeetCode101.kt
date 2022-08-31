@@ -1,29 +1,21 @@
 
-fun isSymmetric(root:Node): Boolean {
-
-    val leftTree = bFS(root.left).sorted()
-    val rightTree = bFS(root.right).sorted()
-
-      if(leftTree.size != 3 || rightTree.size != 3)
-          return false
 
 
-    for(i in leftTree.indices){
-        if(leftTree[i] != rightTree[i])
-            return false
-    }
-
-    return true
+fun isSymmetricNodes(root:Node): Boolean {
+   return compareNodes(root.left, root.right)
 }
 
+fun compareNodes(left:Node?, right:Node?):Boolean {
 
-fun bFS(node:Node?): List<Int> {
-    if(node == null)
-        return emptyList<Int>()
-    val left = bFS(node.left)
-    val right = bFS(node.right)
-    return listOf(node.value).plus(left).plus(right)
+     if(left == null || right == null)
+         return left == right
+
+    val leftVal = compareNodes(left.left, right.right)
+    val rightVal = compareNodes(left.right, right.left)
+
+     return (left.value == right.value) && leftVal && rightVal
 }
+
 
 fun createSymmetricNode(): Node {
   val one = Node(1)
