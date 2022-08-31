@@ -7,8 +7,9 @@ fun reOrganizeString(value:String): String {
 
     val repeatQueue:Queue<Char> = LinkedList()
     val wordQueue:Queue<Char> = LinkedList()
-    for (char in value)
+    for (char in value){
         wordQueue.add(char)
+    }
 
     var orgWord = ""
     while (wordQueue.isNotEmpty()){
