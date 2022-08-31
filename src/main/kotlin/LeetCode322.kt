@@ -19,9 +19,7 @@ fun coinChange(array: Array<Int>, sum:Int): Int {
                       return dd+1
               }
           }
-
     }
-
 
     return  -1
 }
