@@ -1,6 +1,6 @@
 import java.util.*
 
 fun main(args: Array<String>) {
-    println(reOrganizeString("abaab"))
+    println(stringCompression(arrayOf('a', 'a', 'b', 'b', 'c', 'c', 'c')))
 
 }
