@@ -1,6 +1,9 @@
 import java.util.*
 
 fun main(args: Array<String>) {
-    println(stringCompression(arrayOf('a', 'a', 'b', 'b', 'c', 'c', 'c')))
+    val root = rootTreeNode()
+    val other = otherTree()
+
+    println(subTreeOfAnother(root, other))
 
 }
