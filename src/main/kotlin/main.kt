@@ -1,5 +1,5 @@
 import java.util.*
 
 fun main(args: Array<String>) {
-    println(splitBalancedString("RLRRLLRLRL"))
+    println(stringContainsBinaryCode("0000010", 2))
 }
