@@ -4,18 +4,18 @@ package sorting
 fun selectionSort(array: Array<Int>): Array<Int> {
 
     for (i in array.indices){
-        var currentArrayIndex = i
+        var lowestValueIndex = i
         var nextIndexAfterI = i+1 //n
         while (nextIndexAfterI < array.size){ //n-1, n-2, n-3, n-4....
 
-            if(array[nextIndexAfterI] < array[currentArrayIndex])
-                currentArrayIndex = nextIndexAfterI
+            if(array[nextIndexAfterI] < array[lowestValueIndex])
+                lowestValueIndex = nextIndexAfterI
 
             nextIndexAfterI++
         }
-        val currentArrayValue = array[i]
-        array[i] = array[currentArrayIndex]
-        array[currentArrayIndex] = currentArrayValue
+        val currentIndexValue = array[i]
+        array[i] = array[lowestValueIndex]
+        array[lowestValueIndex] = currentIndexValue
     }
 
     return array

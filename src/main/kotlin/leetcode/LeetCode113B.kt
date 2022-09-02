@@ -1,6 +1,6 @@
+import leetcode.Node
 
-
-fun pathSum(root:Node?, target:Int): ArrayList<MutableList<Int>> {
+fun pathSum(root: Node?, target:Int): ArrayList<MutableList<Int>> {
     val paths = arrayListOf<MutableList<Int>>()
     pathToLeafSum(root, target, arrayListOf(), paths)
     return  paths

@@ -1,7 +1,8 @@
 import sorting.bubbleSort
+import sorting.insertionSort
 
 fun main(args: Array<String>) {
-    val result = bubbleSort(arrayOf(9, 3, 2, 1, 4, 6, 5, 7, 8))
+    val result = insertionSort(arrayOf(4, 5, 1)) //451
     result.forEach {
         println(it)
     }

@@ -1,7 +1,8 @@
+import leetcode.Node
 
 val result = mutableListOf<MutableList<Int>>()
 
-fun pathSumToLeaf(root:Node, target:Int): MutableList<MutableList<Int>> {
+fun pathSumToLeaf(root: Node, target:Int): MutableList<MutableList<Int>> {
 
     dFS(root, target, mutableListOf())
     return result

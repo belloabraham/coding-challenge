@@ -1,7 +1,7 @@
+import leetcode.Node
 
 
-
-fun isSymmetricNodes(root:Node): Boolean {
+fun isSymmetricNodes(root: Node): Boolean {
    return compareNodes(root.left, root.right)
 }
 

@@ -1,7 +1,7 @@
+import leetcode.Node
 
 
-
-fun subTreeOfAnother(root:Node, anotherTree:Node): Boolean {
+fun subTreeOfAnother(root: Node, anotherTree:Node): Boolean {
 
     val otherTree = dFS(anotherTree)
 
