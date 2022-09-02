@@ -1,3 +1,5 @@
+package leetcode
+
 import kotlin.reflect.typeOf
 
 data class ListNode(val value:Int, var next:ListNode?=null)

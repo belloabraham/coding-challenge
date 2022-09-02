@@ -18,7 +18,6 @@ fun subTreeOfAnother(root:Node, anotherTree:Node): Boolean {
 
     val left = dFS(root.left)
 
-
     if(left.size == otherTree.size){
         for (i in left.indices){
             isSubTree = left[i] == otherTree[i]
