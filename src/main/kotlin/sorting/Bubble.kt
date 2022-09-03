@@ -3,15 +3,19 @@ package sorting
 
 //T=O(n^2) S = O(1)
 fun bubbleSort(array:Array<Int>): Array<Int> {
-    for (index in array.indices){
-        for (i in 0..(array.size-2)){
+
+    for (i in array.indices){
+        var nextIndex = i+1
+        while (nextIndex < array.size){
             val first = array[i]
-            val second = array[i+1]
-            if(first > second){
+            val second = array[nextIndex]
+            if(second < first){
                 array[i] = second
-                array[i+1] = first
+                array[nextIndex] = first
             }
+            nextIndex++
         }
     }
+
     return array
 }

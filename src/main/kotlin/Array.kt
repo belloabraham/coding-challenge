@@ -1,7 +1,6 @@
 import java.util.*
 import kotlin.math.roundToInt
 
-
 //T = O(n), S = O(1)
 fun indexOfItem(array: Array<Int>, target:Int): Array<Int> {
 
