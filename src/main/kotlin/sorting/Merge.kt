@@ -1,5 +1,6 @@
 package sorting
 
+//T = O(n log n) S = O(n) Stable
 fun mergeSort(array: IntArray){
     val arraySize= array.size
 
