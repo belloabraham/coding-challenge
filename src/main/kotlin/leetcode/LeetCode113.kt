@@ -3,7 +3,6 @@ import leetcode.Node
 val result = mutableListOf<MutableList<Int>>()
 
 fun pathSumToLeaf(root: Node, target:Int): MutableList<MutableList<Int>> {
-
     dFS(root, target, mutableListOf())
     return result
 }
@@ -15,16 +14,20 @@ fun dFS(node:Node, target:Int, paths: MutableList<Int>){
     paths.add(node.value)
 
     if(node.left == null && node.right == null && targetSum == 0){
-        val pathSum = mutableListOf<Int>()
-        pathSum.addAll(paths)
-        result.add(pathSum)
+        result.add(paths)
     }else{
-        if(node.left != null)
-            dFS(node.left!!, targetSum, paths)
-        if(node.right != null)
-            dFS(node.right!!, targetSum, paths)
+        if(node.left != null){
+            val newLeftPathSum = mutableListOf<Int>()
+            newLeftPathSum.addAll(paths)
+            dFS(node.left!!, targetSum, newLeftPathSum)
+        }
+
+        if(node.right != null){
+            val newRightPathSum = mutableListOf<Int>()
+            newRightPathSum.addAll(paths)
+            dFS(node.right!!, targetSum, newRightPathSum)
+        }
     }
-    paths.remove(paths.size - 1)
 }
 
 
